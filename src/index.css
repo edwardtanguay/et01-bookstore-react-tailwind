@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;700&family=Poppins:wght@100;400;700&family=Righteous&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+
+  .active{
+     color: #ff5555
+  }
+
+  @layer components{
+    .list-style{
+      @apply border-b border-CURRENT_LINE py-2 px-4
+    }
+  }
