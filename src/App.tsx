@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import Navbar from './components/Navbar';
 import { AppContext } from './context/AppContext';
+import Navbar from './components/Navbar';
 import Routes from './Router';
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
 					: 'bg-FOREGROUND text-BACKGROUND'
 			}`}
 		>
-			<header className="py-8 shadow-lg">
+			<header className="py-2 shadow-2xl">
 				<Navbar />
 			</header>
 			<main className="flex justify-center">

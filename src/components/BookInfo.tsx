@@ -15,7 +15,7 @@ const BookInfo: React.FC = () => {
     >
       <img className="rounded-xl" src={book?.imgUrl} alt="" />
       <ul className="bg-COMMENT w-full rounded-lg text-center md:text-left">
-        <li className="list-style text-BACKGROUND text-center text-3xl text-ORANGE">
+        <li className="list-style text-BACKGROUND text-center text-3xl">
           {book?.name}
         </li>
         <li className="list-style">{book?.due}</li>
