@@ -30,7 +30,7 @@ export const PageBooks = () => {
 							<Book book={book} />
 						</>
 					) : (
-						<BookNotFound/>
+								<BookNotFound bookId={bookId} />
 					)}
 				</>
 			)}
