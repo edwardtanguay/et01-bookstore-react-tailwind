@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface IBook {
   name: string;
   id: number;
@@ -8,5 +6,3 @@ export interface IBook {
   imgUrl: string;
   desc: string;
 }
-[];
-
