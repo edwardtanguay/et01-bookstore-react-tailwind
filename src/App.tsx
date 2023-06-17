@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AppContext } from './context/AppContext';
+import { AppContext } from './AppContext';
 import Navbar from './components/Navbar';
 import Routes from './Router';
 

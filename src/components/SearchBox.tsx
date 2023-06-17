@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../AppContext';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
 const SearchBooks: React.FC = () => {

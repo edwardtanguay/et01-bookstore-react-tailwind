@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../AppContext';
 
 const ToggleButton = () => {
 	const { isActive, setIsActive } = useContext(AppContext);
