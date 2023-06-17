@@ -1,10 +1,10 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { getBooks } from '../data/data';
 import React, { useContext } from 'react';
-import { SearchContext } from '../context/AppContext';
+import { AppContext } from '../context/AppContext';
 
 const Book: React.FC = () => {
-	const { searchParams } = useContext(SearchContext);
+	const { searchParams } = useContext(AppContext);
 	const location = useLocation();
 	const books = getBooks();
 	return (

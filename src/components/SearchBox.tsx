@@ -1,9 +1,10 @@
 import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 import { BiSearchAlt2 } from 'react-icons/bi';
-import { SearchContext } from '../context/AppContext';
 
 const SearchBooks: React.FC = () => {
-	const { searchParams, setSearchParams } = useContext(SearchContext);
+	const { searchParams, setSearchParams } = useContext(AppContext);
+
 	return (
 		<div className="my-8 bg-CURRENT_LINE rounded-3xl flex gap-4 py-1 items-center px-1 justify-between border border-PURPLE w-[80%]">
 			<input

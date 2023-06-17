@@ -1,28 +1,31 @@
 import React, { createContext, useState } from 'react';
-import { IActive, IProvider, ISearch } from '../interface/interface';
 import { useSearchParams } from 'react-router-dom';
 
-// event for toggleButton for change color und ...
+export interface IActive {
+  isActive: boolean;
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+  searchParams: URLSearchParams;
+  setSearchParams: (searchParams: URLSearchParams) => void;
+}
+
+export interface IAppProvider {
+  children: React.ReactNode;
+}
+
 export const AppContext = createContext<IActive>({} as IActive);
 
-export const ActiveContextProvider: React.FC<IProvider> = ({ children }) => {
+export const ActiveContextProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [isActive, setIsActive] = useState<boolean>(false);
+	const [searchParams, setSearchParams] = useSearchParams();
 
 	return (
-		<AppContext.Provider value={{ isActive, setIsActive }}>
+		<AppContext.Provider value={{
+			isActive,
+			setIsActive,
+			searchParams,
+			setSearchParams
+		}}>
 			{children}
 		</AppContext.Provider>
-	);
-};
-
-// search a book with searchparams Huck
-export const SearchContext = createContext<ISearch>({} as ISearch);
-
-export const SearchContextProvider: React.FC<IProvider> = ({ children }) => {
-	const [searchParams, setSearchParams] = useSearchParams();
-	return (
-		<SearchContext.Provider value={{ searchParams, setSearchParams }}>
-			{children}
-		</SearchContext.Provider>
 	);
 };
