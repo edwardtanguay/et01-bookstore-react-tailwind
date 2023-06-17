@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { PageBooks } from './pages/PageBooks';
 import { PageAbout } from './pages/PageAbout';
 
-const Router = () => {
+export const Router = () => {
 	return (
 		<div>
 			<Routes>
@@ -14,5 +14,3 @@ const Router = () => {
 		</div>
 	);
 };
-
-export default Router;

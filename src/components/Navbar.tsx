@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import ToggleButton from './ToggleButton'
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <nav className='flex justify-between container px-8 items-center'>
      <h2 className='hidden sm:flex text-xl font-bold font-Righteous text-ORANGE'>Book Store</h2>
@@ -15,5 +15,3 @@ const Navbar = () => {
     </nav>
   )
 }
-
-export default Navbar
