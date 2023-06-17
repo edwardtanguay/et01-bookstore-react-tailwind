@@ -1,30 +1,38 @@
 import React, { createContext, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import _books from './data/books.json';
+import { IBook } from './interface/interface';
 
 export interface IActive {
-  isActive: boolean;
-  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
-  searchParams: URLSearchParams;
-  setSearchParams: (searchParams: URLSearchParams) => void;
+	isActive: boolean;
+	setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+	filter: string;
+	setFilter: (filter: string) => void;
+	books: IBook[];
+	setBooks: (books: IBook[]) => void;
 }
 
 export interface IAppProvider {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 export const AppContext = createContext<IActive>({} as IActive);
 
 export const ActiveContextProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [isActive, setIsActive] = useState<boolean>(false);
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [filter, setFilter] = useState('');
+	const [books, setBooks] = useState<IBook[]>(_books);
 
 	return (
-		<AppContext.Provider value={{
-			isActive,
-			setIsActive,
-			searchParams,
-			setSearchParams
-		}}>
+		<AppContext.Provider
+			value={{
+				isActive,
+				setIsActive,
+				filter,
+				setFilter,
+				books,
+				setBooks
+			}}
+		>
 			{children}
 		</AppContext.Provider>
 	);

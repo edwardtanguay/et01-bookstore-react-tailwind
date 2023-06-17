@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 
 import React from "react";
-import { getBookInfo } from "../data/data";
 
 const BookInfo: React.FC = () => {
   const params = useParams();
