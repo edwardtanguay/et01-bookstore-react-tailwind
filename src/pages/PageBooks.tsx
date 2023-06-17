@@ -4,6 +4,7 @@ import Books from '../components/Books';
 import SearchBox from '../components/SearchBox';
 import { useParams } from 'react-router-dom';
 import { Book } from '../components/Book';
+import { BookNotFound } from '../components/BookNotFound';
 
 export const PageBooks = () => {
 	const { getBook } = useContext(AppContext);
@@ -29,7 +30,7 @@ export const PageBooks = () => {
 							<Book book={book} />
 						</>
 					) : (
-						<>no book</>
+						<BookNotFound/>
 					)}
 				</>
 			)}

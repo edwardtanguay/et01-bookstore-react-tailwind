@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import _books from './data/books.json';
-import { IBook } from './interface/interface';
+import { IBook } from './interface';
 
 export interface IActive {
 	isActive: boolean;
@@ -9,7 +9,7 @@ export interface IActive {
 	setFilter: (filter: string) => void;
 	books: IBook[];
 	setBooks: (books: IBook[]) => void;
-	getBook: (id: number) => IBook | undefined; 
+	getBook: (id: number) => IBook | undefined;
 }
 
 export interface IAppProvider {

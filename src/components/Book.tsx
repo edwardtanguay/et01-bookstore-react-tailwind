@@ -1,4 +1,4 @@
-import { IBook } from '../interface/interface';
+import { IBook } from '../interface';
 
 interface IProps {
 	book: IBook;
