@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Navbar from './components/Navbar';
 import { AppContext } from './context/AppContext';
-import LibraryRouters from './routers/LibraryRouters';
+import Routes from './Router';
 
 const App = () => {
 	const { isActive } = useContext(AppContext);
@@ -18,7 +18,7 @@ const App = () => {
 				<Navbar />
 			</header>
 			<main className="flex justify-center">
-				<LibraryRouters />
+				<Routes />
 			</main>
 		</div>
 	);
