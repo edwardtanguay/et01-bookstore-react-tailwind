@@ -1,16 +1,15 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Books from './pages/Books';
-import About from './pages/About';
-import BookInfo from './components/BookInfo';
+import { PageBooks } from './pages/PageBooks';
+import { PageAbout } from './pages/PageAbout';
 
 const Router = () => {
 	return (
 		<div>
 			<Routes>
-				<Route path="/" element={<Navigate to="/book" />} />
-				<Route path="/book" element={<Books />} />
-				<Route path="/book/:bookId" element={<BookInfo />} />
-				<Route path="/about" element={<About />} />
+				<Route path="/" element={<Navigate to="/books" />} />
+				<Route path="/books" element={<PageBooks />} />
+				<Route path="/books/:bookId" element={<PageBooks />} />
+				<Route path="/about" element={<PageAbout />} />
 			</Routes>
 		</div>
 	);

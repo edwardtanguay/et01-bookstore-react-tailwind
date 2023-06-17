@@ -1,33 +1,27 @@
-import { useContext } from 'react';
-import { AppContext } from '../AppContext';
-import { NavLink } from 'react-router-dom';
+import { IBook } from '../interface/interface';
 
-const Book = () => {
-	const { filter, books } = useContext(AppContext);
+interface IProps {
+	book: IBook;
+}
 
+export const Book = ({ book }: IProps) => {
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-			{books.filter(m => m.name.toLowerCase().includes(filter.toLowerCase())).map((book) => (
-				<NavLink
-					to={`/book/${book.id}`}
-					key={book.id}
-				>
-					<div className="flex items-center gap-4 justify-start md:w-80 lg:w-96 bg-CURRENT_LINE py-2 px-4 rounded-lg border border-PURPLE shadow-inner shadow-COMMENT cursor-pointer ">
-						<img
-							className="w-24 md:w-16 lg:w-24 rounded-lg"
-							src={book.imgUrl}
-							alt=""
-						/>
-						<ul className=" bg-COMMENT w-full rounded-lg font-bold">
-							<li className="list-style">{book.name}</li>
-							<li className="list-style">{book.due}</li>
-							<li className="list-style">{book.amount}</li>
-						</ul>
-					</div>
-				</NavLink>
-			))}
+		<div className="flex flex-col items-center py-6 container px-8 gap-4">
+			<>
+				<img className="rounded-xl" src={book.imgUrl} alt="" />
+				<ul className="bg-COMMENT w-full rounded-lg text-center md:text-left">
+					<li className="list-style text-BACKGROUND text-center text-3xl">
+						{book.name}
+					</li>
+					<li className="list-style">{book.due}</li>
+					<li className="list-style text-YELLOW text-xl">
+						{book.amount}
+					</li>
+					<li className=" list-style text-BACKGROUND text-xl text-justify px-3">
+						{book.desc}
+					</li>
+				</ul>
+			</>
 		</div>
 	);
 };
-
-export default Book;
