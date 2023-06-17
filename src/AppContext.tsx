@@ -9,6 +9,7 @@ export interface IActive {
 	setFilter: (filter: string) => void;
 	books: IBook[];
 	setBooks: (books: IBook[]) => void;
+	getBook: (id: number) => IBook | undefined; 
 }
 
 export interface IAppProvider {
@@ -22,6 +23,10 @@ export const ActiveContextProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [filter, setFilter] = useState('');
 	const [books, setBooks] = useState<IBook[]>(_books);
 
+	const getBook = (id: number): IBook | undefined => {
+		return books.find((book) => book.id === id);
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -30,7 +35,8 @@ export const ActiveContextProvider: React.FC<IAppProvider> = ({ children }) => {
 				filter,
 				setFilter,
 				books,
-				setBooks
+				setBooks,
+				getBook
 			}}
 		>
 			{children}

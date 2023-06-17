@@ -1,9 +1,10 @@
-import { NavLink } from 'react-router-dom';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { AppContext } from '../AppContext';
+import { NavLink } from 'react-router-dom';
 
-const Book: React.FC = () => {
+const Book = () => {
 	const { filter, books } = useContext(AppContext);
+
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 			{books.filter(m => m.name.toLowerCase().includes(filter.toLowerCase())).map((book) => (
