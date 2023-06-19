@@ -1,10 +1,10 @@
 export const PageAbout = () => {
 	return (
-		<div>
+		<div className="px-8">
 			<p className="py-6">
 				This site was refactored from{' '}
 				<a
-					className="text-blue-600 hover:underline"
+					className="normal-link"
 					href="https://github.com/edwardtanguay/et01-bookstore-react-tailwind-unrefactored"
 				>
 					this site
@@ -14,7 +14,7 @@ export const PageAbout = () => {
 			<p>
 				Thanks to{' '}
 				<a
-					className="text-blue-600 hover:underline"
+					className="normal-link"
 					href="https://github.com/adelorosia"
 				>
 					Adel

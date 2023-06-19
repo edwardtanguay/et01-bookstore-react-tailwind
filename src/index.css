@@ -16,4 +16,8 @@
   .list-style {
     @apply border-b border-CURRENT_LINE py-2 px-4;
   }
+
+  .normal-link {
+    @apply text-blue-600 hover:underline;
+  }
 }
